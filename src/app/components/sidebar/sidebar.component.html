@@ -2,12 +2,22 @@
   <ul>
     <li>
       <a routerLink="" [class.activated]="currentUrl == '/'">
+        <i class="material-icons">message</i>
+      </a>
+    </li>
+    <li>
+      <a routerLink="home" [class.activated]="currentUrl == '/home'">
         <i class="material-icons">supervised_user_circle</i>
       </a>
     </li>
     <li>
-      <a routerLink="bulma" [class.activated]="currentUrl == '/bulma'">
-        <i class="material-icons">message</i>
+      <a routerLink="aboutus" [class.activated]="currentUrl == '/aboutus'">
+        <i class="material-icons">alarm_add</i>
+      </a>
+    </li>
+    <li>
+      <a routerLink="contact" [class.activated]="currentUrl == '/contact'">
+        <i class="material-icons">camera_enhance</i>
       </a>
     </li>
   </ul>

@@ -12,6 +12,15 @@
             "element",
             "app",
             "kebab-case"
-        ]
+        ],
+        "max-line-length": false,
+        "no-trailing-whitespace": false,
+        "eofline": false,
+        "comment-format": false
     }
 }
+
+
+// tslint:disable:max-line-length
+// tslint:disable:no-trailing-whitespace
+// https://palantir.github.io/tslint/usage/configuration/
