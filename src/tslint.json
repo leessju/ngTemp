@@ -16,7 +16,9 @@
         "max-line-length": false,
         "no-trailing-whitespace": false,
         "eofline": false,
-        "comment-format": false
+        "comment-format": false,
+        "curly": false,
+        "member-ordering": false
     }
 }
 

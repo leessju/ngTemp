@@ -15,6 +15,10 @@ import { ContactComponent } from './components/contact/contact.component';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { TopbarComponent } from './components/topbar/topbar.component';
 
+import { Globals} from './model/Global';
+import { BoardService } from './services/board.service';
+//import { RangePipe} from './model/DataUtility';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +38,7 @@ import { TopbarComponent } from './components/topbar/topbar.component';
     BrowserAnimationsModule,
     FormsModule
   ],
-  providers: [],
+  providers: [Globals, BoardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
