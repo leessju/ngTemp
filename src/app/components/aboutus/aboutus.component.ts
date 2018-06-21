@@ -27,6 +27,28 @@ export class AboutusComponent implements OnInit {
               private locStrat: LocationStrategy,
               private boardService: BoardService)  {
 
+    this.locStrat.onPopState(() => {
+      this.isPopState = true;
+    });
+
+    this.router.events.subscribe(event => {
+      // Scroll to top if accessing a page, not via browser history stack
+      if (event instanceof NavigationEnd  && !this.isPopState) {
+        window.scrollTo(0, 0);
+        this.isPopState = false;
+      }
+
+      // Ensures that isPopState is reset
+      if (event instanceof NavigationEnd) {
+        this.isPopState = false;
+      }
+    });
+
+
+
+  }
+
+  ngOnInit() {
     this.board = {
       board_idx: 0,
       board_num: 0,
@@ -70,26 +92,6 @@ export class AboutusComponent implements OnInit {
 
   }
 
-  ngOnInit() {
-    this.locStrat.onPopState(() => {
-      this.isPopState = true;
-    });
-
-    this.router.events.subscribe(event => {
-      // Scroll to top if accessing a page, not via browser history stack
-      if (event instanceof NavigationEnd  && !this.isPopState) {
-        window.scrollTo(0, 0);
-        this.isPopState = false;
-      }
-
-      // Ensures that isPopState is reset
-      if (event instanceof NavigationEnd) {
-        this.isPopState = false;
-      }
-    });
-
-  }
-
   getDataModeStatus(): string {
     if (this.dataMode === DataMode.New) {
       return '신규';
@@ -126,5 +128,7 @@ export class AboutusComponent implements OnInit {
 
     return;
   }
+
+
 
 }

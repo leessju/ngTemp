@@ -43,8 +43,9 @@
   <!-- PAGINATION -->
   <div class="block">
     <nav class="pagination">
-      <a href="" class="pagination-previous" disabled>Previous</a>
-      <a href="" class="pagination-next">Next page</a>
+      <!--disabled-->
+      <button (click)="pagePrevious()" class="pagination-previous" [disabled]="currentPageNum == 1">Previous</button>
+      <button (click)="pageNext()" class="pagination-next" [disabled]="currentPageNum == 9">Next page</button>
       <ul class="pagination-list">
         <!--is-current-->
         <li *ngFor="let a of counter(mathMin(pageCount, 10));let n = index;">

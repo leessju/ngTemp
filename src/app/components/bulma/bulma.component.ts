@@ -79,4 +79,18 @@ export class BulmaComponent implements OnInit {
     return a;
   }
 
+  pagePrevious() {
+    if (this.currentPageNum > 1) {
+      this.currentPageNum--;
+      this.getBoardData(this.currentPageNum);
+    }
+  }
+
+  pageNext() {
+    if (this.currentPageNum < 9) {
+      this.currentPageNum++;
+      this.getBoardData(this.currentPageNum);
+    }
+  }
+
 }
