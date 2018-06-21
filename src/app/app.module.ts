@@ -17,6 +17,9 @@ import { TopbarComponent } from './components/topbar/topbar.component';
 
 import { Globals} from './model/Global';
 import { BoardService } from './services/board.service';
+import { ParentViewComponent } from './components/_sub/parent-view/parent-view.component';
+import { ChildViewComponent } from './components/_sub/child-view/child-view.component';
+import { SiblingViewComponent } from './components/_sub/sibling-view/sibling-view.component';
 //import { RangePipe} from './model/DataUtility';
 
 @NgModule({
@@ -29,7 +32,10 @@ import { BoardService } from './services/board.service';
     PostComponent,
     ContactComponent,
     AboutusComponent,
-    TopbarComponent
+    TopbarComponent,
+    ParentViewComponent,
+    ChildViewComponent,
+    SiblingViewComponent
   ],
   imports: [
     BrowserModule,

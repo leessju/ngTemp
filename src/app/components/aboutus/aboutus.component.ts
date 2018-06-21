@@ -4,9 +4,9 @@ import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { LocationStrategy } from '@angular/common';
 import { DataMode } from '../../model/MyEnum';
 import { BoardService } from '../../services/board.service';
+import * as $ from 'jquery';
 
-// declare var jquery: any;
-// declare var $: any;
+// https://medium.com/@swarnakishore/how-to-include-and-use-jquery-in-angular-cli-project-592e0fe63176
 
 @Component({
   selector: 'app-aboutus',
@@ -90,6 +90,12 @@ export class AboutusComponent implements OnInit {
       }
     });
 
+    $(function() {
+      $('#btnD').click(function() {
+        alert('jquery 잘 됩니다.');
+      });
+    });
+
   }
 
   getDataModeStatus(): string {
@@ -122,7 +128,7 @@ export class AboutusComponent implements OnInit {
 
   deleteData() {
     if (this.board_idx > 0) {
-      alert('삭제합니다. 실제는 삭제 안됩니다.');
+      alert('삭제합니다. 아직 미반영');
       this.router.navigate(['']);
     }
 
