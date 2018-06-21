@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ShareService } from '../../../services/share.service';
 
 @Component({
   selector: 'app-sibling-view',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SiblingViewComponent implements OnInit {
 
-  constructor() { }
+  s_share_msg: string;
+
+  constructor(private shareService: ShareService) { }
 
   ngOnInit() {
+    this.shareService.currentMessage.subscribe(
+      m => this.s_share_msg = m
+    );
   }
 
+  share() {
+    this.shareService.changeMessage('sharing!!!!');
+  }
 }

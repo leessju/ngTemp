@@ -1,3 +1,10 @@
-<p>
-  parent-view works!
-</p>
+<div class="div_p">
+  <h1 class="title">부모</h1>
+  <h1 class="subtitle">{{ p_output_msg }}</h1>
+  <h1 class="subtitle">{{ p_output_view_child_msg }}</h1>
+  <h1 class="subtitle">{{ p_share_msg }}</h1>
+  <div class="block">
+    <a class="button is-primary m-r-xs" (click)="input()">output</a>
+  </div>
+  <app-child-view [c_input_msg]="p_input_msg" (c_output_msg)="get_output($event)" ></app-child-view>
+</div>
