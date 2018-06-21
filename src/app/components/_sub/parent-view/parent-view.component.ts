@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+//import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { ChildViewComponent } from '../child-view/child-view.component';
 import { ShareService } from '../../../services/share.service';
 
@@ -16,7 +17,7 @@ export class ParentViewComponent implements OnInit {
   p_output_view_child_msg: string;
   p_share_msg: string;
 
-  @ViewChild(ChildViewComponent) child;
+  //@ViewChild(ChildViewComponent) child;
 
   constructor(private shareService: ShareService) {
 

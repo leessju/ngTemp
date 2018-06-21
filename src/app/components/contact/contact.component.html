@@ -1,7 +1,23 @@
 <div class="container">
   <app-topbar></app-topbar>
 
-  <p style="height: 800px">
-    contact works!
-  </p>
+  <div class="block">
+    <h1 class="subtitle">{{ 'abcdefg' | uppercase }}</h1>
+    <h1 class="subtitle">{{ 'abcdefg' | lowercase }}</h1>
+    <h1 class="subtitle">{{ 'abcdefg' | slice:2:4 }}</h1>
+    <h1 class="subtitle">{{ 5.678 | number:'1.2-3' }}</h1>
+    <h1 class="subtitle">{{ 5.678 | number:'3.4-5' }}</h1>
+    <h1 class="subtitle">{{ 5.678 | number:'3.1-2' }}</h1>
+    <h1 class="subtitle">{{ 0.25 | percent }}</h1>
+    <h1 class="subtitle">{{ 0.25 | currency }}</h1>
+    <h1 class="subtitle">{{ 0.25 | currency: 'EUR' }}</h1>
+    <h1 class="subtitle">{{ 0.25 | currency: 'EUR' : 'code' }}</h1>
+    <h1 class="subtitle">{{ date }}</h1>
+    <h1 class="subtitle">{{ date | date: 'short' }}</h1>
+    <h1 class="subtitle">{{ date | date: 'shortDate' }}</h1>
+    <h1 class="subtitle">{{ date | date: 'shortTime' }}</h1>
+    <h1 class="subtitle">{{ date | date: 'yyyy-MM-dd' }}</h1>
+  </div>
+
 </div>
+<div style="margin-top:500px"></div>
