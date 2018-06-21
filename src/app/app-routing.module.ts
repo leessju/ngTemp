@@ -10,7 +10,9 @@ const routes: Routes = [
   { path: '', component: BulmaComponent },
   { path: 'home', component: HomeComponent },
   { path: 'aboutus', component: AboutusComponent },
+  { path: 'aboutus/:board_idx', component: AboutusComponent },
   { path: 'contact', component: ContactComponent }
+
 ];
 
 @NgModule({

@@ -1,64 +1,32 @@
 <div class="container">
   <app-topbar></app-topbar>
 
+  <div class="block">
+    <!--is-info  is-success  is-warning  is-danger -->
+    <div class="notification" [ngClass]="board_idx > 0 ? 'is-danger' : 'is-info'" >
+      <button class="delete" id="btnD"></button>
+       {{ getDataModeStatus() }}
+    </div>
+  </div>
+
   <!-- FORMS -->
   <div class="block">
-
       <div class="field">
         <label class="label">Subject</label>
         <input id="txtSubject" type="text" class="input" placeholder="Enter Subject" [(ngModel)]="board.board_subject" >
-        {{ board.board_subject }}
       </div>
-
-      <!--<div class="field">-->
-        <!--<label class="label">Content</label>-->
-        <!--<input type="text" class="input is-success" placeholder="Enter Name" [(ngModel)]="board.board_content">-->
-        <!--{{ board.board_content }}-->
-      <!--</div>-->
-
-      <!--<div class="field">-->
-        <!--<label class="label">date</label>-->
-        <!--<input type="text" class="input is-danger" placeholder="Enter Name" [(ngModel)]="board.publish_start_date">-->
-        <!--{{ board.publish_start_date }}-->
-      <!--</div>-->
-
-      <!--<div class="field">-->
-        <!--<label class="label">Package</label>-->
-        <!--<p class="control">-->
-            <!--<span class="select">-->
-              <!--<select>-->
-                <!--<option>Select dropdown</option>-->
-                <!--<option>Simple</option>-->
-                <!--<option>Standard</option>-->
-                <!--<option>Super</option>-->
-              <!--</select>-->
-            <!--</span>-->
-        <!--</p>-->
-      <!--</div>-->
-
       <div class="field">
         <label class="label">Content</label>
         <p class="control">
           <textarea class="textarea" placeholder="Enter daata" [(ngModel)]="board.board_content"></textarea>
         </p>
       </div>
-    {{ board.board_content }}
-
   </div>
 
   <div class="block">
-    <a class="button is-primary m-r-xs" (click)="newData()">신규</a>
     <a class="button is-info m-r-xs" (click)="saveData()" >저장</a>
-    <a class="button is-danger" (click)="deleteData()" >삭제</a>
-    <!--<a href="" class="button is-success">Success</a>-->
-    <!--<a href="" class="button is-warning">Warning</a>-->
+    <a class="button is-danger" (click)="deleteData()" *ngIf="board_idx > 0" >삭제</a>
   </div>
+
 </div>
-
 <div style="margin-top:200px"></div>
-
-<script type="application/javascript">
-  alert('hifdfasdf');
-</script>
-
-

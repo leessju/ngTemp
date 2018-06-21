@@ -27,5 +27,13 @@ export class BoardService {
     return this.http.get<JsonBaseEx>(`${this.base_url}${this.service_name}/GetBoardLists?board_type_idx=${this.board_type_idx}&page=${page}&page_rows=${this.page_rows}`, httpOptions);
   }
 
+  getBoardList(board_idx: number): Observable<JsonBaseEx> {
+    //http://10.211.55.13/s/Board/GetList?board_idx=634
+    return this.http.get<JsonBaseEx>(`${this.base_url}${this.service_name}/GetList?board_idx=${board_idx}`, httpOptions);
+  }
+
+
+  //GetList
+
 }
 

@@ -31,7 +31,7 @@
       </tr>
       </thead>
       <tbody *ngFor="let d of dataBoard">
-        <tr (click)="selectedRow(d.board_num)" [ngClass]="{'is-selected':d.board_num == selectedNum}">
+        <tr (click)="selectedRow(d.board_num, d.board_idx)" [ngClass]="{'is-selected':d.board_num == selectedNum}">
           <td>{{ d.board_num }}</td>
           <td>{{ d.board_subject }}</td>
           <td>{{ d.create_date }}</td>
@@ -53,13 +53,14 @@
       </ul>
     </nav>
   </div>
+
+  <div class="block">
+    <a class="button is-primary m-r-xs" (click)="newData()">신규</a>
+  </div>
+
 </div>
 
 <div style="margin-top:100px"></div>
-
-
-
-
 
 
 

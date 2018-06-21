@@ -6,17 +6,17 @@
       </a>
     </li>
     <li>
-      <a routerLink="home" [class.activated]="currentUrl == '/home'">
+      <a routerLink="home" [class.activated]="currentUrl?.indexOf('/home') >= 0">
         <i class="material-icons">supervised_user_circle</i>
       </a>
     </li>
     <li>
-      <a routerLink="aboutus" [class.activated]="currentUrl == '/aboutus'">
+      <a routerLink="aboutus" [class.activated]="currentUrl?.indexOf('/aboutus') >= 0">
         <i class="material-icons">alarm_add</i>
       </a>
     </li>
     <li>
-      <a routerLink="contact" [class.activated]="currentUrl == '/contact'">
+      <a routerLink="contact" [class.activated]="currentUrl?.indexOf('/contact') >= 0">
         <i class="material-icons">camera_enhance</i>
       </a>
     </li>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BoardService } from '../../services/board.service';
 import { Globals } from '../../model/Global';
+import { Router, ActivatedRoute } from '@angular/router';
 
 //import { JsonBaseOption } from '../../model/JsonBase';
 //import { RangePipe} from '../../model/DataUtility';
@@ -21,7 +22,8 @@ export class BulmaComponent implements OnInit {
   title: string;
   subject: string;
 
-  constructor(private board: BoardService) {
+  constructor(private board: BoardService, private router: Router) {
+
     if (Globals.selectedRow != null) {
       this.selectedNum = Globals.selectedRow;
     }
@@ -40,9 +42,15 @@ export class BulmaComponent implements OnInit {
     this.getBoardData(this.currentPageNum);
   }
 
-  selectedRow(rowNumber: number) {
+
+  selectedRow(rowNumber: number, board_idx: number) {
     this.selectedNum = rowNumber;
     Globals.selectedRow = rowNumber;
+
+    //this.router.navigate(['/aboutus',  {board_idx: board_idx}]);
+    this.router.navigate(['/aboutus',  String(board_idx)]);
+
+    // https://alligator.io/angular/navigation-routerlink-navigate-navigatebyurl/
   }
 
   getBoardData(page: number) {
@@ -54,6 +62,10 @@ export class BulmaComponent implements OnInit {
           this.pageCount = d.response_option.page_count;
     });
 
+  }
+
+  newData() {
+    this.router.navigate(['/aboutus']);
   }
 
   counter(i: number): Array<number> {
