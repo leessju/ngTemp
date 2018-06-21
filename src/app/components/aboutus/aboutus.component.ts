@@ -5,8 +5,8 @@ import { LocationStrategy } from '@angular/common';
 import { DataMode } from '../../model/MyEnum';
 import { BoardService } from '../../services/board.service';
 
-declare var jquery: any;
-declare var $: any;
+// declare var jquery: any;
+// declare var $: any;
 
 @Component({
   selector: 'app-aboutus',
