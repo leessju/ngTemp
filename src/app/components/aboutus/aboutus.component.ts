@@ -4,8 +4,8 @@ import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { LocationStrategy } from '@angular/common';
 import { DataMode } from '../../model/MyEnum';
 import { BoardService } from '../../services/board.service';
-import * as $ from 'jquery';
 
+import * as $ from 'jquery';
 // https://medium.com/@swarnakishore/how-to-include-and-use-jquery-in-angular-cli-project-592e0fe63176
 
 @Component({
